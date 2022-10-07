@@ -1,0 +1,169 @@
+@use "variables" as var;
+@use "mixins";
+
+header {
+  position: relative;
+}
+
+.top-nav {
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(255, 255, 255, 0.1);
+  color: var.$color-secondary;
+  height: 50px;
+  padding: 1em;
+  box-sizing: border-box;
+
+  @include mixins.desktop {
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+.menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  width: 100%;
+  margin: 0;
+  margin-top: 50px;
+  padding: 0;
+  right: 0;
+  top: 0;
+  
+  @include mixins.desktop {
+    padding-right: 2em;
+    flex-direction: row;
+    width: auto;
+    margin-top: 0;
+    bottom: 0;
+  }
+}
+
+// Meny-alternativ
+.menu > li {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0.5em 0;
+  width: 100%;
+  background-color: var.$color-transparent;
+
+  @include mixins.desktop {
+    margin: 0 1rem;
+    width: auto;
+    background-color: transparent;
+  }
+
+  a {
+    text-decoration: none;
+    color: var.$color-secondary;
+    font-size: 1.5em;
+  }
+
+  a:hover {
+    border-bottom: 2px solid;
+  }
+}
+
+#menu-toggle ~ .menu li {
+  @include mixins.desktop {
+  }
+}
+
+//Faktiska knappen
+.menu-button-container {
+  display: flex;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include mixins.desktop {
+    display: none;
+  }
+}
+// Checkboxen
+#menu-toggle {
+  display: none;
+}
+
+// Hamburger-symbol
+
+//Mitten-streck
+.menu-button {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+// Övre streck
+.menu-button::before {
+  content: "";
+  margin-top: -8px;
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+// Undre streck
+.menu-button::after {
+  content: "";
+  margin-top: 8px;
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+//Första strecket i krysset
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(45deg);
+}
+
+//mitten-streck i hamburgare
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: transparent;
+}
+//Andra strecket i krysset
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-45deg);
+}
+
+//Media Queries
+@media (max-width: 768px) {
+ //HUR FAN SKA JAG LÖSA DET HÄR???!?!?!?!
+// meny-alternativen som åker ner
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  // texten som åker ner
+  #menu-toggle:checked ~ .menu li {
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+}

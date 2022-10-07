@@ -1,0 +1,76 @@
+@use "variables" as var;
+@use "mixins";
+
+footer {
+  background-color: var.$color-primary;
+  color: var.$color-secondary;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2em 3em 2em;
+  text-align: left;
+  margin: 0;
+  font-size: 1.5em;
+
+  p {
+    padding: 0.5em;
+  }
+
+  article {
+    padding: 0.5em;
+  }
+
+  @include mixins.desktop {
+    flex-direction: row;
+    gap: 2em;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+
+  .contact__adress {
+    @include mixins.contact-item;
+
+    margin-bottom: 2em;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .contact__website {
+    @include mixins.link-styling;
+  }
+
+  .contact__phone {
+    @include mixins.contact-item;
+
+    margin-bottom: 2em;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .contact__social-media {
+    @include mixins.contact-item;
+
+    display: flex;
+    justify-content: space-between;
+
+    .contact__social-media--icon {
+      margin-right: 0.5em;
+    }
+
+    article {
+      padding: 0;
+      width: 100%;
+    }
+  }
+
+  .social-media__link {
+    @include mixins.link-styling;
+  }
+}

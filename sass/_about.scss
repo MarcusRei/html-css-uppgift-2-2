@@ -1,0 +1,78 @@
+@use "mixins";
+@use "variables" as var;
+
+#about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .profiles {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+
+        .profile__item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
+        
+            @include mixins.desktop{
+                width: 40%;
+            }
+
+            .profile__title {
+                top: 1em;
+            }
+        
+            .profile__quote {
+            display: flex;
+            background-color: #d3d3d3;
+            padding: 2em;
+            width: 70%;
+            border-radius: 5px;
+            align-items: flex-start;
+            font-size: 1em;
+        
+                p {
+                    position: relative;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+            
+                    .profile__quote--icon {
+                        display: inline;
+                        size: 2em;
+                        font-size: 3em;
+                    }
+                } 
+            }
+        
+        }
+
+        @include mixins.desktop{
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        img {
+            @include mixins.profile-image;
+        }
+    }
+    
+    .arrow-container {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .arrow {
+        color: var.$color-primary;
+        
+        @include mixins.icon-styling;
+    
+    }
+}
+

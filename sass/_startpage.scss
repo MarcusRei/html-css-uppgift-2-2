@@ -1,0 +1,39 @@
+@use "mixins";
+@use "variables" as var;
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 1em;
+  height: 100vh;
+  //@include mixin.background-image;
+  background-image: url(/assets/negative-space-black-forest-dawn.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+
+figure {
+  position: relative;
+
+  .arrow {
+    position: absolute;
+    top: 6em;
+    
+
+    @include mixins.desktop {
+      top: 9em;
+    }
+
+    @include mixins.icon-styling;
+    color: var.$color-secondary;
+  }
+}
+
+  
+}
+
+.main-container {
+  position: relative;
+}

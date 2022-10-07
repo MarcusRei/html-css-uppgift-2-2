@@ -1,0 +1,19 @@
+@use "mixins";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0%;
+  font-family: "Times New Roman", Times, serif;
+  position: relative;
+
+  @include mixins.desktop {
+    overflow-x: hidden;
+  }
+}
+
+/* * {
+  box-sizing: border-box;
+} */

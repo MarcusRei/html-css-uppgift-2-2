@@ -1,0 +1,316 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  position: relative;
+}
+
+.top-nav {
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  height: 50px;
+  padding: 1em;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+@media screen and (min-width: 768px) {
+  .menu {
+    padding-right: 2em;
+  }
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+.menu > li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.5em;
+}
+.menu > li a:hover {
+  border-bottom: 2px solid;
+  border-color: #ffffff;
+}
+
+.menu-button-container {
+  display: flex;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .menu-button-container {
+    display: none;
+  }
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+.menu-button::before {
+  content: "";
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: "";
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(45deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-45deg);
+}
+
+/* @include mixins.desktop{
+
+} */
+@media (max-width: 768px) {
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 1em;
+  height: 100vh;
+  background-image: url(/assets/negative-space-black-forest-dawn.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+main .arrow {
+  position: relative;
+  top: 12em;
+  font-size: 1.5em;
+  text-decoration: none;
+  transform: rotate(90deg);
+  color: #ffffff;
+}
+
+.main-container {
+  position: relative;
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#about .profiles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+#about .profiles .profile__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+@media screen and (min-width: 768px) {
+  #about .profiles .profile__item {
+    width: 40%;
+  }
+}
+#about .profiles .profile__item .profile__title {
+  top: 1em;
+}
+#about .profiles .profile__item .profile__quote {
+  display: flex;
+  background-color: #d3d3d3;
+  padding: 2em;
+  width: 70%;
+  border-radius: 5px;
+  align-items: flex-start;
+  font-size: 1em;
+}
+#about .profiles .profile__item .profile__quote p {
+  position: relative;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+#about .profiles .profile__item .profile__quote p .profile__quote--icon {
+  display: inline;
+  font-size: 3em;
+}
+@media screen and (min-width: 768px) {
+  #about .profiles {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+#about .profiles img {
+  border-radius: 50%;
+  width: 70%;
+  box-shadow: -1px 6px 28px 24px rgba(173, 168, 168, 0.57);
+}
+#about .arrow-container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+#about .arrow {
+  color: #000000;
+  font-size: 1.5em;
+  text-decoration: none;
+  transform: rotate(90deg);
+}
+
+footer {
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2em 3em 2em;
+  text-align: left;
+  margin: 0;
+  font-size: 1.5em;
+}
+footer p {
+  padding: 0.5em;
+}
+footer article {
+  padding: 0.5em;
+}
+@media screen and (min-width: 768px) {
+  footer {
+    flex-direction: row;
+    gap: 2em;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+}
+footer .contact__adress {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: left;
+  gap: 0.8em;
+  margin-bottom: 2em;
+}
+footer .contact__adress p {
+  margin: 0;
+  padding: 0;
+}
+footer .contact__phone {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: left;
+  gap: 0.8em;
+  margin-bottom: 2em;
+}
+footer .contact__phone p {
+  margin: 0;
+  padding: 0;
+}
+footer .contact__social-media {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: left;
+  gap: 0.8em;
+  display: flex;
+  justify-content: space-between;
+}
+footer .contact__social-media .contact__social-media--icon {
+  margin-right: 0.5em;
+}
+footer .contact__social-media article {
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0%;
+  font-family: "Times New Roman", Times, serif;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

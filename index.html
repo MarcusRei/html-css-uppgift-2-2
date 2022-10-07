@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Some random page</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/9936055087.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="/sass/main.scss" />
+  </head>
+  <body>
+    <header>
+      <section class="top-nav">
+        <input id="menu-toggle" type="checkbox" />
+        <label class="menu-button-container" for="menu-toggle">
+          <div class="menu-button"></div>
+        </label>
+        <ul class="menu">
+          <li><a href="#home">Hem</a></li>
+          <li><a href="#about">Om</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </section>
+    </header>
+
+    <main id="home">
+      <h1>Welcome to nature</h1>
+      <h2>A journey through time and sheep</h2>
+      <h2>To see how ...cotton ... is mage, made I mean...</h2>
+      <figure>
+        <a href="#about"
+          ><i class="fa-sharp fa-solid fa-circle-right arrow"></i
+        ></a>
+      </figure>
+    </main>
+
+    <section id="about">
+      <h2>Träffa laget</h2>
+
+      <div class="profiles">
+        <article class="profile__item">
+          <h3 class="profile__title">Rakib</h3>
+          <img
+            src="/assets/profiles/Rakib_Square.png"
+            alt="Profilbild på Rakib"
+          />
+          <content class="profile__quote">
+            <p>
+              <i class="fa-solid fa-quote-right profile__quote--icon"></i>
+              Rakib är vår vassaste node-utvecklare och håller ständigt ett öga
+              på nya tekniker
+            </p>
+          </content>
+        </article>
+
+        <article class="profile__item">
+          <h3 class="profile__title">Alexandra</h3>
+          <img
+            src="/assets/profiles/Alexandra_Square.png"
+            alt="Profilbild på Alexandra med hund"
+          />
+          <content class="profile__quote">
+            <p>
+              <i class="fa-solid fa-quote-right profile__quote--icon"></i>
+              Alexandra håller reda på alla överallt och ser till att det flyter
+            </p>
+          </content>
+        </article>
+
+        <article class="profile__item">
+          <h3 class="profile__title">Lasse</h3>
+          <img
+            src="/assets/profiles/NoPerson_Square.png"
+            alt="Obestämd profilbild"
+          />
+          <content class="profile__quote">
+            <p>
+              <i class="fa-solid fa-quote-right profile__quote--icon"></i>
+              Gör övriga saker... mestadels ...
+            </p>
+          </content>
+        </article>
+
+        <article class="profile__item">
+          <h3 class="profile__title">Sebastian</h3>
+          <img
+            src="/assets/profiles/Sebastian_Square.png"
+            alt="Profilbild på Sebastian"
+          />
+          <content class="profile__quote">
+            <p>
+              <i class="fa-solid fa-quote-right profile__quote--icon"></i>
+              En av våra utbildare som har stor erfarenhet av ganska många saker
+            </p>
+          </content>
+        </article>
+      </div>
+
+      <figure class="arrow-container">
+        <a class="down-arrow-icon" href="#contact">
+          <i class="fa-sharp fa-solid fa-circle-right arrow"></i>
+        </a>
+      </figure>
+    </section>
+
+    <footer id="contact">
+      <section class="contact__adress">
+        <p>Tegel Consulting AB</p>
+        <p>Agatvägen 18</p>
+        <p>168 60 Bromma</p>
+      </section>
+
+      <section class="contact__phone">
+        <p>
+          info at
+          <a class="contact__website" href="https://www.tegelconsulting.se/"
+            >tegelconsulting.se</a
+          >
+        </p>
+        <p>070-123 456 78</p>
+      </section>
+
+      <section class="contact__social-media">
+        <article>
+          <a
+            class="social-media__link"
+            href="https://www.instagram.com/"
+            target="blank"
+          >
+            <i class="bi bi-instagram contact__social-media--icon"></i>
+            Instagram
+          </a>
+        </article>
+
+        <article>
+          <a
+            class="social-media__link"
+            href="https://twitter.com/?lang=en"
+            target="blank"
+          >
+            <i class="bi bi-twitter contact__social-media--icon"></i>
+            Twitter
+          </a>
+        </article>
+
+        <article>
+          <a
+            class="social-media__link"
+            href="https://www.facebook.com/"
+            target="blank"
+          >
+            <i class="fa-brands fa-facebook-f contact__social-media--icon"></i>
+            Facebook
+          </a>
+        </article>
+      </section>
+    </footer>
+  </body>
+</html>
